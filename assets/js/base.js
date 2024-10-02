@@ -1,33 +1,12 @@
-const courses = [
-  { id: "course-1", name: "دوره دروازه‌بانی مبتدی", price: 100000, image: "https://via.placeholder.com/150" },
-  { id: "course-2", name: "دوره دروازه‌بانی پیشرفته", price: 200000, image: "https://via.placeholder.com/150" },
-  { id: "course-3", name: "دوره تکنیک‌های دروازه‌بانی", price: 300000, image: "https://via.placeholder.com/150" },
-];
 
 const equipment = [
-  { id: "equipment-1", name: "کفش دروازه‌بانی", price: 150000, image: "https://via.placeholder.com/150" },
-  { id: "equipment-2", name: "زانوبند", price: 50000, image: "https://via.placeholder.com/150" },
-  { id: "equipment-3", name: "دستکش دروازه‌بانی", price: 120000, image: "https://via.placeholder.com/150" },
+  { id: "equipment-1", name: "آرنج بند", price: 150000, image: "./assets/img/aranj.jpg" },
+  { id: "equipment-2", name: "زانوبند", price: 150000, image: "./assets/img/zanoo.jpg" },
+  { id: "equipment-3", name: "دستکش دروازه‌بانی", price: 100000, image: "./assets/img/dast.jpg" },
+  { id: "equipment-3", name: "شلوار دروازه بانی", price: 120000, image: "./assets/img/shalvar.jpg" },
 ];
 
 const cart = [];
-
-function displayCourses() {
-  const courseList = document.getElementById("course-list");
-  courses.forEach(course => {
-      const courseDiv = document.createElement("div");
-      courseDiv.className = "col-md-4";
-      courseDiv.innerHTML = `
-          <div class="course">
-              <img src="${course.image}" alt="${course.name}">
-              <h5>${course.name}</h5>
-              <p>${course.price} تومان</p>
-              <button class="btn btn-primary btn-add" onclick="addToCart('${course.id}', 'course')">اضافه به سبد خرید</button>
-          </div>
-      `;
-      courseList.appendChild(courseDiv);
-  });
-}
 
 function displayEquipment() {
   const equipmentList = document.getElementById("equipment-list");
@@ -36,9 +15,9 @@ function displayEquipment() {
       equipmentDiv.className = "col-md-4";
       equipmentDiv.innerHTML = `
           <div class="equipment">
-              <img src="${item.image}" alt="${item.name}">
+              <img src="${item.image}" alt="${item.name}" class="w-50">
               <h5>${item.name}</h5>
-              <p>${item.price} تومان</p>
+              <p>تومان${item.price}</p>
               <button class="btn btn-primary btn-add" onclick="addToCart('${item.id}', 'equipment')">اضافه به سبد خرید</button>
           </div>
       `;
@@ -86,7 +65,6 @@ function updateCart() {
 }
 
 // نمایش دوره‌ها و وسایل در صفحه
-displayCourses();
 displayEquipment();
 
 
