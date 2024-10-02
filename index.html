@@ -1,0 +1,82 @@
+<!-- coder: MHB -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/bootstrap.rtl.min.css" />
+    <link rel="stylesheet" href="./assets/css/fontiran.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Akademi</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="text-center">آکادمی دروازه‌بانی فوتسال</h1>
+
+      <h2 class="mt-5">دوره‌های آموزشی</h2>
+      <div class="row" id="course-list">
+        <!-- دوره‌ها در اینجا اضافه می‌شوند -->
+      </div>
+
+      <h2 class="mt-5">وسایل مورد نیاز</h2>
+      <div class="row" id="equipment-list">
+        <!-- وسایل در اینجا اضافه می‌شوند -->
+      </div>
+
+      <h2 class="mt-5">سبد خرید</h2>
+      <div id="cart" class="mb-3" dir="rtl">
+        <ul class="list-group" id="cart-items">
+          <!-- اقلام سبد خرید در اینجا اضافه می‌شوند -->
+        </ul>
+        <h4 class="mt-3">جمع کل: <span id="total-price">0</span> تومان</h4>
+        <div class="w-100">
+          <button class="btn btn-success w-25 mt-3" id="checkout-button">
+            پرداخت
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="paymentModal"
+      tabindex="-1"
+      aria-labelledby="paymentModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" dir="rtl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="paymentModalLabel">پرداخت</h5>
+            <button
+              type="button"
+              class="btn-close m-1"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body" dir="rtl">
+            لطفاً به شماره کارت زیر پول را واریز کنید:
+            <h6>شماره کارت: 1234-5678-9012-3456</h6>
+            سپس اسکرین شات واریزی را به آیدی زیر در پیام‌رسان ایتا ارسال کنید:
+            <h6 dir="rtl">آیدی ایتا: your_id_here@</h6>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              بستن
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./assets/js/bootstrap.js"></script>
+    <script src="./assets/js/base.js"></script>
+  </body>
+</html>
