@@ -17,7 +17,7 @@ function displayEquipment() {
           <div class="equipment">
               <img src="${item.image}" alt="${item.name}" class="w-50">
               <h5>${item.name}</h5>
-              <p>تومان${item.price}</p>
+              <p dir="rtl">${item.price}تومان</p>
               <button class="btn btn-primary btn-add" onclick="addToCart('${item.id}', 'equipment')">اضافه به سبد خرید</button>
           </div>
       `;
