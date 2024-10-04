@@ -74,8 +74,8 @@
     </div>
 
     <!-- سبد خرید -->
+    <h2>سبد خرید</h2>
     <div id="cart">
-      <h2>سبد خرید</h2>
       <table>
         <thead>
           <tr>
@@ -174,7 +174,7 @@
       function downloadInvoice() {
         const invoiceElement = document.getElementById("cart");
         html2canvas(invoiceElement).then((canvas) => {
-          const image = canvas.toDataURL("image/png");
+          const image = canvas.toDataURL("image/jpg");
           const link = document.createElement("a");
           link.href = image;
           link.download = "invoice.png"; // نام فایل فاکتور
