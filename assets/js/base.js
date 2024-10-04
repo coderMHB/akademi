@@ -1,8 +1,8 @@
 
 const equipment = [
   { id: "equipment-1", name: "آرنج بند", price: 150000, image: "./assets/img/aranj.jpg" },
-  { id: "equipment-2", name: "زانوبند", price: 150000, image: "./assets/img/zanoo.jpg" },
-  { id: "equipment-3", name: "دستکش دروازه‌بانی", price: 100000, image: "./assets/img/dast.jpg" },
+    { id: "equipment-2", name: "دستکش دروازه‌بانی", price: 100000, image: "./assets/img/dast.jpg" },
+  { id: "equipment-3", name: "زانوبند", price: 150000, image: "./assets/img/zanoo.jpg" },
   { id: "equipment-3", name: "شلوار دروازه بانی", price: 120000, image: "./assets/img/shalvar.jpg" },
 ];
 
