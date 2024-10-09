@@ -21,6 +21,14 @@
         text-align: center;
         color: #333;
       }
+      @media (max-width: 350px) {
+        h2{
+          font-size: small;
+        }
+        h3{
+          font-size: 15px;
+        }
+      }
       #equipment-list .card {
         margin-bottom: 20px;
       }
@@ -48,7 +56,7 @@
         text-align: center;
         margin-top: 20px;
       }
-      #cart button {
+      button {
         background-color: #007bff;
         color: white;
         border: none;
@@ -88,17 +96,58 @@
         </tbody>
       </table>
       <h3>مبلغ کل: <span id="totalPrice">0</span> تومان</h3>
-      <button onclick="downloadInvoice()">دانلود فاکتور</button>
+    </div>
+    <button type="button" onclick="downloadInvoice()" id="checkout-button">
+      دانلود فاکتور
+    </button>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="paymentModal"
+      tabindex="-1"
+      aria-labelledby="paymentModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" dir="rtl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="paymentModalLabel">پرداخت</h5>
+            <button
+              type="button"
+              class="btn-close m-1"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body" dir="rtl">
+            لطفاً به شماره کارت زیر پول را واریز کنید:
+            <h6>شماره کارت: 6104338672745383</h6>
+            سپس اسکرین شات واریزی و فاکتور را به آیدی زیر در ایتا ارسال کنید:
+            <h6 dir="rtl">آیدی ایتا: artifacts_creative1@</h6>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              بستن
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- کتابخانه html2canvas برای تبدیل HTML به تصویر -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="./assets/js/bootstrap.js"></script>
     <script>
       const equipment = [
         {
           id: "equipment-1",
           name: "آرنج بند",
-          price: 150000,
+          price: 120000,
           image: "./assets/img/aranj.jpg",
         },
         {
@@ -109,14 +158,14 @@
         },
         {
           id: "equipment-3",
-          name: "دستکش دروازه‌بانی",
+          name: "مچ بند",
           price: 100000,
           image: "./assets/img/dast.jpg",
         },
         {
           id: "equipment-4",
           name: "شلوار دروازه بانی",
-          price: 120000,
+          price: 650000,
           image: "./assets/img/shalvar.jpg",
         },
       ];
@@ -181,6 +230,16 @@
           link.click();
         });
       }
+
+      document
+        .getElementById("checkout-button")
+        .addEventListener("click", function () {
+          // نمایش پاپ‌آپ
+          var paymentModal = new bootstrap.Modal(
+            document.getElementById("paymentModal")
+          );
+          paymentModal.show();
+        });
     </script>
   </body>
 </html>
