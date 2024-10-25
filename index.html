@@ -1,265 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/css/bootstrap.rtl.min.css" />
-    <link rel="stylesheet" href="./assets/css/fontiran.css" />
+    <title>فروشگاه فوتسال</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>Akademi</title>
-    <style>
-      body {
-        font-family: "IRANSansX";
-        direction: rtl;
-        text-align: right;
-        margin: 20px;
-        background-color: #f9f9f9;
-      }
-      h1 {
-        font-family: "moraba";
-        text-align: center;
-        color: #333;
-      }
-      @media (max-width: 350px) {
-        h2{
-          font-size: small;
-        }
-        h3{
-          font-size: 15px;
-        }
-      }
-      #equipment-list .card {
-        margin-bottom: 20px;
-      }
-      #cart {
-        margin-top: 20px;
-        padding: 20px;
-        background-color: #fff;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-      #cart table {
-        width: 100%;
-        border-collapse: collapse;
-      }
-      #cart th,
-      #cart td {
-        padding: 10px;
-        border-bottom: 1px solid #ddd;
-        text-align: center;
-      }
-      #cart th {
-        background-color: #f2f2f2;
-      }
-      #cart h3 {
-        text-align: center;
-        margin-top: 20px;
-      }
-      button {
-        background-color: #007bff;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
-        margin-top: 10px;
-      }
-      #cart button:hover {
-        background-color: #0069d9;
-      }
-    </style>
+    <link rel="stylesheet" href="./assets/css/fontiran.css" />
   </head>
   <body>
-    <h1>آکادمی دروازه‌بانی فوتسال</h1>
-
-    <!-- لیست محصولات -->
-    <div class="container mt-5">
-      <h2 class="mt-5">وسایل مورد نیاز</h2>
-      <div class="row" id="equipment-list">
-        <!-- وسایل در اینجا اضافه می‌شوند -->
-      </div>
-    </div>
-
-    <!-- سبد خرید -->
-    <h2>سبد خرید</h2>
-    <div id="cart">
-      <table>
-        <thead>
-          <tr>
-            <th>محصول</th>
-            <th>قیمت</th>
-          </tr>
-        </thead>
-        <tbody id="cartItems">
-          <!-- آیتم‌های سبد خرید در اینجا اضافه می‌شوند -->
-        </tbody>
-      </table>
-      <h3>مبلغ کل: <span id="totalPrice">0</span> تومان</h3>
-    </div>
-    <div class="w-100 d-flex justify-content-center">
-      <button type="button" onclick="downloadInvoice()" id="checkout-button">
-        دانلود فاکتور
+    <h2 class="title">آکادمی فوتبال نگین سرخ</h2>
+    <header>
+      <button type="button" id="open-cart" onclick="closeModal('players')">
+        سبد خرید
       </button>
-    </div>
+      <button id="home">صفحه اصلی</button>
+    </header>
 
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="paymentModal"
-      tabindex="-1"
-      aria-labelledby="paymentModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog" dir="rtl">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="paymentModalLabel">پرداخت</h5>
-            <button
-              type="button"
-              class="btn-close m-1"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body" dir="rtl">
-            لطفاً به شماره کارت زیر پول را واریز کنید:
-            <h6>شماره کارت: 6104338672745383</h6>
-            سپس اسکرین شات واریزی و فاکتور را به آیدی زیر در ایتا ارسال کنید:
-            <h6 dir="rtl">آیدی ایتا: artifacts_creative1@</h6>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              بستن
-            </button>
-          </div>
+    <div class="container">
+      <h2 style="text-align: center; width: 100% !important">
+        سالن را انتخاب کنید
+      </h2>
+      <div
+        class="row"
+        style="display: flex; flex-wrap: wrap; justify-content: center"
+      >
+        <div class="box" onclick="showPlayers('salon1')">
+          <span style="font-weight: 700">شعبه نامجو</span>
+          <span
+            style="
+              font-size: 8px;
+              text-align: center;
+              font-weight: 600;
+              padding: 4px;
+            "
+            > پردیسان، خیابان بیست و دو بهمن، مدرسه نامجو
+          </span>
+        </div>
+        <div class="box" onclick="showPlayers('salon2')">
+          <span style="font-weight: 700">شعبه سلیمانی</span>
+          <span
+            style="
+              font-size: 8px;
+              text-align: center;
+              font-weight: 600;
+              padding: 4px;
+            "
+            >پردیسان، بلوار امام علی جنب بیمارستان مادر
+          </span>
+        </div>
+        <div class="box" onclick="showPlayers('salon3')">
+          <span style="font-weight: 700">کانون محراب </span>
+          <span
+            style="
+              font-size: 8px;
+              text-align: center;
+              font-weight: 600;
+              padding: 4px;
+            "
+            >پردیسان، بلوار دانشگاه، اندیشه ۶-۷
+          </span>
+        </div>
+        <div class="box" onclick="showPlayers('salon4')">
+          <span style="font-weight: 700">شعبه نارنج</span>
+          <span
+            style="
+              font-size: 8px;
+              text-align: center;
+              font-weight: 600;
+              padding: 4px;
+            "
+            >پردیسان، بلوار شهروند، خیابان سبلان، کوچه یک
+          </span>
         </div>
       </div>
     </div>
 
-    <!-- کتابخانه html2canvas برای تبدیل HTML به تصویر -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <script src="./assets/js/bootstrap.js"></script>
-    <script>
-      const equipment = [
-        {
-          id: "equipment-1",
-          name: "آرنج بند asics",
-          price: 350000,
-          image: "./assets/img/aranj.jpg",
-        },
-        {
-          id: "equipment-2",
-          name: "زانوبند asics",
-          price: 4500000,
-          image: "./assets/img/zanoo.jpg",
-        },
-        {
-          id: "equipment-3",
-          name: "مچ بند asics",
-          price: 200000,
-          image: "./assets/img/dast.jpg",
-        },
-        {
-          id: "equipment-4",
-          name: "شلوار دروازه بانی",
-          price: 650000,
-          image: "./assets/img/shalvar.jpg",
-        },
-        {
-          id: "equipment-5",
-          name: "دست کش دروازه بانی",
-          price: 700000,
-          image: "./assets/img/kesh.jpg",
-        },
-        {
-          id: "equipment-4",
-          name: "آرنج بند ساده",
-          price: 120000,
-          image: "./assets/img/zanoooo.jpg",
-        },
-        {
-          id: "equipment-4",
-          name: "زانوبند ساده",
-          price: 150000,
-          image: "./assets/img/aranjj.jpg",
-        },
-      ];
+    <div id="players" class="modal">
+      <div class="modal-content" dir="rtl">
+        <span class="close" onclick="closeModal('players')">&times;</span>
+        <h3 id="player-title"></h3>
+        <ol id="player-list"></ol>
+      </div>
+    </div>
 
-      function displayEquipment() {
-        const equipmentList = document.getElementById("equipment-list");
+    <div id="terms" class="modal">
+      <div class="modal-content" dir="rtl">
+        <span class="close" onclick="closeModal('terms')">&times;</span>
+        <h2 id="player-title">افزودن ترم به سبد خرید</h2>
+        <ol id="term-list"></ol>
+      </div>
+    </div>
 
-        equipment.forEach((item) => {
-          const equipmentDiv = document.createElement("div");
-          equipmentDiv.className = "col-md-4 mb-4";
-          equipmentDiv.innerHTML = `
-            <div class="equipment">
-              <img src="${item.image}" alt="${item.name}" class="w-50">
-              <h5 style="font-family: 'moraba';">${item.name}</h5>
-              <p dir="rtl">${item.price}تومان</p>
-              <button class="btn btn-primary btn-add" onclick="addToCart('${item.id}', ${item.price})">اضافه به سبد خرید</button>
-          </div>
-          `;
-          equipmentList.appendChild(equipmentDiv);
-        });
-      }
+    <div id="cart" class="modal">
+      <div class="modal-content" dir="rtl">
+        <span class="close" onclick="closeModal('cart')">&times;</span>
+        <h2>سبد خرید</h2>
+        <ol id="cart-items"></ol>
+        <button id="download-invoice">دانلود فاکتور</button>
+      </div>
+    </div>
 
-      displayEquipment();
-
-      let cart = [];
-      let totalPrice = 0;
-
-      function addToCart(productId, price) {
-        const selectedItem = equipment.find((item) => item.id === productId);
-        if (!selectedItem) return;
-
-        // اضافه کردن محصول به سبد خرید
-        cart.push({ name: selectedItem.name, price: price });
-        totalPrice += price;
-
-        updateCart();
-      }
-
-      function updateCart() {
-        const cartItems = document.getElementById("cartItems");
-        cartItems.innerHTML = "";
-
-        // نمایش محصولات سبد خرید
-        cart.forEach((item) => {
-          const row = document.createElement("tr");
-          row.innerHTML = `<td>${item.name}</td><td>${item.price} تومان</td>`;
-          cartItems.appendChild(row);
-        });
-
-        // به‌روزرسانی قیمت کل
-        document.getElementById("totalPrice").innerHTML = totalPrice;
-      }
-
-      // دانلود فاکتور
-      function downloadInvoice() {
-        const invoiceElement = document.getElementById("cart");
-        html2canvas(invoiceElement).then((canvas) => {
-          const image = canvas.toDataURL("image/jpg");
-          const link = document.createElement("a");
-          link.href = image;
-          link.download = "invoice.png"; // نام فایل فاکتور
-          link.click();
-        });
-      }
-
-      document
-        .getElementById("checkout-button")
-        .addEventListener("click", function () {
-          // نمایش پاپ‌آپ
-          var paymentModal = new bootstrap.Modal(
-            document.getElementById("paymentModal")
-          );
-          paymentModal.show();
-        });
-    </script>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
