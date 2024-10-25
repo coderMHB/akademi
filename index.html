@@ -96,10 +96,43 @@
         <span class="close" onclick="closeModal('cart')">&times;</span>
         <h2>سبد خرید</h2>
         <ol id="cart-items"></ol>
-        <button id="download-invoice">دانلود فاکتور</button>
+        <button id="download-invoice" onclick="downloadInvoice()">دانلود فاکتور</button>
       </div>
     </div>
 
+    <div
+      class="modal fade"
+      id="paymentModal"
+      tabindex="-1"
+      aria-labelledby="paymentModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" dir="rtl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="paymentModalLabel">پرداخت</h3>
+          </div>
+          <div class="modal-body" dir="rtl">
+            لطفاً به شماره کارت زیر پول را واریز کنید:
+            <h4>شماره کارت: 6104338672745383</h4>
+            سپس اسکرین شات واریزی و فاکتور را به آیدی زیر در ایتا ارسال کنید:
+            <h4 dir="rtl">آیدی ایتا: artifacts_creative1@</h4>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              بستن
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="./assets/js/bootstrap.js"></script>
     <script src="./assets/js/script.js"></script>
   </body>
 </html>

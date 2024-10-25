@@ -162,10 +162,10 @@ button:hover {
   animation: fadeOut 4.5s forwards;
 }
 
-/* @keyframes fadeOut {
+@keyframes fadeOut {
   0% { opacity: 1; }
   100% { opacity: 0; }
-} */
+}
 
 .remove-button {
   color: #dc2626;
@@ -189,4 +189,12 @@ button:hover {
   margin-top: 10px;
   font-family: moraba;
   color: #910a0a;
+}
+
+.modal-content{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
 }
