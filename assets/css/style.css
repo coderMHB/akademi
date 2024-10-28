@@ -12,7 +12,6 @@
 
 body {
   font-family: "Arial", sans-serif;
-  height: 640vh;
   margin: 0;
   padding: 0;
   background-color: #f3f4f6;
@@ -23,26 +22,22 @@ header {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #00000057;
-  backdrop-filter: blur(10px);
+  background-color: #374151;
   color: white;
   padding: 10px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   z-index: 10;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .container {
   display: flex;
-  height: 50vh;
+  height: 70vh;
   justify-content: space-around;
   align-items: center;
   margin-top: 0px;
-  padding: 20px;
-  padding-top: 0px;
-  margin-bottom: 50px;
-  margin-top: 20px;
+  padding: 10px;
   flex-wrap: wrap;
 }
 
@@ -167,10 +162,10 @@ button:hover {
   animation: fadeOut 4.5s forwards;
 }
 
-@keyframes fadeOut {
+/* @keyframes fadeOut {
   0% { opacity: 1; }
   100% { opacity: 0; }
-}
+} */
 
 .remove-button {
   color: #dc2626;
@@ -196,85 +191,21 @@ button:hover {
   color: #910a0a;
 }
 
-.modal-content{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media (max-width: 350px) {
-  h2{
-    font-size: small;
-  }
-  h3{
-    font-size: 15px;
-  }
-}
-#equipment-list .card {
-  margin-bottom: 20px;
-}
-#cart {
-  margin-top: 20px;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-#cart table {
-  width: 100%;
-  border-collapse: collapse;
-}
-#cart th,
-#cart td {
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
-  text-align: center;
-}
-#cart th {
-  background-color: #f2f2f2;
-}
-#cart h3 {
-  text-align: center;
-  margin-top: 20px;
-}
-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 10px;
-}
-#cart button:hover {
-  background-color: #0069d9;
-}
 
 .course, .equipment {
   border: 1px solid #e0e0e0;
   border-radius: 10px;
   padding: 20px;
-  margin: 15px;
+  margin: 15px 0px;
   text-align: center;
   background-color: #ffffff;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
   position: relative;
+}
+
+div.col-md-4:nth-child(4) > div:nth-child(1){
+  margin-bottom: 100px;
 }
 
 .course:hover, .equipment:hover {
@@ -309,86 +240,4 @@ button {
 .btn-add:hover {
   background-color: #0056b3;
   transform: translateY(-2px);
-}
-
-.cart-item {
-  transition: background-color 0.3s, transform 0.3s;
-  padding: 10px;
-  border-radius: 5px;
-}
-
-.cart-item:hover {
-  background-color: #e9ecef;
-  transform: scale(1.02);
-}
-
-/* انیمیشن برای نمایش سبد خرید */
-@keyframes slideIn {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-#cart {
-  animation: slideIn 0.5s forwards;
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-}
-
-/* Media Queries برای ریسپانسیو بودن */
-@media (max-width: 1024px) {
-  .course, .equipment {
-    margin: 10px;
-    padding: 15px;
-  }
-
-  .btn-add {
-    width: 70%;
-    padding: 10px;
-    font-size: 12px;
-  }
-
-  h1, h2 {
-    font-size: 1.5em;
-  }
-}
-
-@media (max-width: 768px) {
-  .course, .equipment {
-    margin: 10px;
-    padding: 15px;
-  }
-
-  .btn-add {
-    width: 100%;
-    padding: 10px;
-    font-size: 14px;
-  }
-
-  h1, h2 {
-    font-size: 1.5em;
-  }
-}
-
-@media (max-width: 576px) {
-  .course, .equipment {
-    margin: 5px;
-    padding: 10px;
-  }
-
-  .btn-add {
-    padding: 8px;
-    font-size: 12px;
-  }
-
-  h1, h2 {
-    font-size: 1.2em;
-  }
 }
