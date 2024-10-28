@@ -1,5 +1,27 @@
 const playersData = {
-  salon1: ["علی", "رضا", "حمید", "فرزاد", "کامران"],
+  salon1: [
+    "حسین عطاب",
+    "محمدحسین پورجواد",
+    "محمدامین احمدی",
+    "محمدطاها طاهری",
+    "علی لطفی",
+    "علی اکبری",
+    "علی محمدی",
+    "علی خدابخشی",
+    "محمدمهدی دشمه",
+    "محمدامین تقی زاده",
+    "محمدحسن قاسمی",
+    "امیراردلان نمازی",
+    "محمدامین حبیان",
+    "محمدرضا قربانی",
+    "علی اصغر بهشتی",
+    "امیرمحمد بیگدلی",
+    "احسن بیگدلی",
+    "عارف کدخدا",
+    "بنیامین زارعی",
+    "علی حاجی بابایی",
+    "محمدامین آسیابانان",
+  ],
   salon2: [
     "محمد حسین کریمی",
     "احمدرضا خدری",
@@ -66,6 +88,7 @@ function showTerms(player) {
 
   for (const termKey in termData) {
     const term = termData[termKey];
+
     const li = document.createElement("li");
     li.innerText = `${term.name} - قیمت: ${term.price},000 تومان`;
     li.onclick = () => addToCart(termKey);
@@ -167,3 +190,80 @@ document
     );
     paymentModal.show();
   });
+
+const equipment = [
+  {
+    id: "equipment-1",
+    name: "لباس تیم",
+    price: 350000,
+    image: "./assets/img/lebas.jpg",
+  },
+  {
+    id: "equipment-2",
+    name: "کوله ورزشی",
+    price: 490000,
+    image: "./assets/img/koole.jpg",
+  },
+  {
+    id: "equipment-3",
+    name: "آرنج بند asics",
+    price: 350000,
+    image: "./assets/img/aranj.jpg",
+  },
+  {
+    id: "equipment-4",
+    name: "زانوبند asics",
+    price: 4500000,
+    image: "./assets/img/zanoo.jpg",
+  },
+  {
+    id: "equipment-5",
+    name: "مچ بند asics",
+    price: 200000,
+    image: "./assets/img/dast.jpg",
+  },
+  {
+    id: "equipment-6",
+    name: "شلوار دروازه بانی",
+    price: 650000,
+    image: "./assets/img/shalvar.jpg",
+  },
+  {
+    id: "equipment-7",
+    name: "دست کش دروازه بانی",
+    price: 700000,
+    image: "./assets/img/kesh.jpg",
+  },
+  {
+    id: "equipment-8",
+    name: "آرنج بند ساده",
+    price: 120000,
+    image: "./assets/img/zanoooo.jpg",
+  },
+  {
+    id: "equipment-9",
+    name: "زانوبند ساده",
+    price: 150000,
+    image: "./assets/img/aranjj.jpg",
+  },
+];
+
+function displayEquipment() {
+  const equipmentList = document.getElementById("equipment-list");
+
+  equipment.forEach((item) => {
+    const equipmentDiv = document.createElement("div");
+    equipmentDiv.className = "col-12 col-md-4 mb-4";
+    equipmentDiv.innerHTML = `
+        <div class="equipment col-12 col-md-4">
+          <img src="${item.image}" alt="${item.name}" class="w-50">
+          <h5 style="font-family: 'moraba';">${item.name}</h5>
+          <p dir="rtl">${item.price}تومان</p>
+          <button class="btn btn-primary btn-add" style="vertical-align: middle;" onclick="addToCart('${item.id}')"> اضافه به سبد خرید </button>
+      </div>
+      `;
+    equipmentList.appendChild(equipmentDiv);
+  });
+}
+
+displayEquipment();
