@@ -3,6 +3,13 @@
   src: url(../fonts/morabba.woff);
 }
 
+@font-face {
+  font-family: IRANSansX;
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/woff2/IRANSansX-regular.woff2") format("woff2");
+}
+
 * {
   padding: 0px;
   margin: 0px;
