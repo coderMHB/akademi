@@ -6,18 +6,20 @@
     <title>فروشگاه فوتسال</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="./assets/css/fontiran.css" />
+    <!-- <link rel="stylesheet" href="./assets/css/bootstrap.rtl.min.css"> -->
   </head>
   <body>
     <h2 class="title">آکادمی فوتبال نگین سرخ</h2>
     <header>
       <button type="button" id="open-cart" onclick="closeModal('players')">
-        سبد خرید
+        <i class="fas fa-cart-shopping" style="vertical-align: middle;"></i> سبد خرید 
       </button>
-      <button id="home">صفحه اصلی</button>
     </header>
-
+    <div class="w-100" style="display: flex;justify-content: center;">
+      <img src="./assets/img/logo-team.png" alt="SEO" style="width: 100px;">
+    </div>
     <div class="container">
-      <h2 style="text-align: center; width: 100% !important">
+      <h2 style="text-align: center; width: 100% !important;">
         سالن را انتخاب کنید
       </h2>
       <div
@@ -33,7 +35,8 @@
               font-weight: 600;
               padding: 4px;
             "
-            > پردیسان، خیابان بیست و دو بهمن، مدرسه نامجو
+          >
+            پردیسان، خیابان بیست و دو بهمن، مدرسه نامجو
           </span>
         </div>
         <div class="box" onclick="showPlayers('salon2')">
@@ -75,9 +78,8 @@
       </div>
     </div>
 
-    <!-- لیست محصولات -->
     <div class="container mt-5">
-      <h2 class="mt-5">وسایل مورد نیاز</h2>
+      <h2 class="mt-5" style="padding-bottom: 8px;">وسایل مورد نیاز</h2>
       <div class="row" id="equipment-list">
         <!-- وسایل در اینجا اضافه می‌شوند -->
       </div>
@@ -104,7 +106,9 @@
         <span class="close" onclick="closeModal('cart')">&times;</span>
         <h2>سبد خرید</h2>
         <ol id="cart-items"></ol>
-        <button id="download-invoice">دانلود فاکتور</button>
+        <button id="download-invoice" onclick="downloadInvoice()">
+          دانلود فاکتور
+        </button>
       </div>
     </div>
 
@@ -118,19 +122,13 @@
       <div class="modal-dialog" dir="rtl">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="paymentModalLabel">پرداخت</h5>
-            <button
-              type="button"
-              class="btn-close m-1"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
+            <h3 class="modal-title" id="paymentModalLabel">پرداخت</h3>
           </div>
           <div class="modal-body" dir="rtl">
             لطفاً به شماره کارت زیر پول را واریز کنید:
-            <h6>شماره کارت: 6104338672745383</h6>
+            <h4>شماره کارت: 6104338672745383</h4>
             سپس اسکرین شات واریزی و فاکتور را به آیدی زیر در ایتا ارسال کنید:
-            <h6 dir="rtl">آیدی ایتا: artifacts_creative1@</h6>
+            <h4 dir="rtl">آیدی ایتا: artifacts_creative1@</h4>
           </div>
           <div class="modal-footer">
             <button
@@ -146,6 +144,44 @@
     </div>
 
 
+    <div
+      class="modal fade"
+      id="paymentModal"
+      tabindex="-1"
+      aria-labelledby="paymentModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" dir="rtl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="paymentModalLabel">پرداخت</h3>
+          </div>
+          <div class="modal-body" dir="rtl">
+            لطفاً به شماره کارت زیر پول را واریز کنید:
+            <h4>شماره کارت: 6104338672745383</h4>
+            سپس اسکرین شات واریزی و فاکتور را به آیدی زیر در ایتا ارسال کنید:
+            <h4 dir="rtl">آیدی ایتا: artifacts_creative1@</h4>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              بستن
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="./assets/js/bootstrap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="./assets/js/script.js"></script>
+    <script
+    src="https://kit.fontawesome.com/9a5100e7b6.js"
+    crossorigin="anonymous"
+  ></script>
   </body>
 </html>
