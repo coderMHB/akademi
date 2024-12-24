@@ -26,7 +26,7 @@
         class="row"
         style="display: flex; flex-wrap: wrap; justify-content: center"
       >
-        <div class="box" onclick="showPlayers('salon1')">
+        <div class="box" onclick="showPlayersInput('salon1')">
           <span style="font-weight: 700">شعبه نامجو</span>
           <span
             style="
@@ -39,7 +39,7 @@
             پردیسان، خیابان بیست و دو بهمن، مدرسه نامجو
           </span>
         </div>
-        <div class="box" onclick="showPlayers('salon2')">
+        <div class="box" onclick="showPlayersInput('salon2')">
           <span style="font-weight: 700">شعبه سلیمانی</span>
           <span
             style="
@@ -51,7 +51,7 @@
             >پردیسان، بلوار امام علی جنب بیمارستان مادر
           </span>
         </div>
-        <div class="box" onclick="showPlayers('salon3')">
+        <div class="box" onclick="showPlayersInput('salon3')">
           <span style="font-weight: 700">کانون محراب </span>
           <span
             style="
@@ -63,7 +63,7 @@
             >پردیسان، بلوار دانشگاه، اندیشه ۶-۷
           </span>
         </div>
-        <div class="box" onclick="showPlayers('salon4')">
+        <div class="box" onclick="showPlayersInput('salon4')">
           <span style="font-weight: 700">شعبه نارنج</span>
           <span
             style="
@@ -89,7 +89,7 @@
       <div class="modal-content" dir="rtl">
         <span class="close" onclick="closeModal('players')">&times;</span>
         <h3 id="player-title"></h3>
-        <ol id="player-list"></ol>
+        <div id="player-list"></div>
       </div>
     </div>
 

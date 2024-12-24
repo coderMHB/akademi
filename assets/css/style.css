@@ -180,6 +180,13 @@ button:hover {
   transition: color 0.3s;
 }
 
+.player-list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .remove-button:hover {
   color: #b91c1c;
 }

@@ -308,3 +308,43 @@ document
     );
     paymentModal.show();
   });
+
+
+  function showPlayersInput(salon) {
+    const playerTitle = document.getElementById("player-title");
+    playerTitle.innerText = `نام بازیکن را وارد کنید:`;
+  
+    const playerList = document.getElementById("player-list");
+    playerList.innerHTML = ""; // پاک کردن محتوا
+  
+    // ایجاد اینپوت
+    const input = document.createElement("input");
+    input.type = "text";
+    input.placeholder = "نام خود را وارد کنید";
+    input.style.height = "35px";
+    input.style.marginBottom = "20px";
+    input.dir = "rtl";
+  
+    // ایجاد دکمه بررسی
+    const button = document.createElement("button");
+    button.innerText = "جستجو";
+    button.style.height = "35px";
+    button.onclick = () => {
+      const playerName = input.value.trim();
+      if (playersData[salon].includes(playerName)) {
+        showTerms(playerName, salon); // نمایش ترم‌ها در صورت یافتن نام
+        closeModal("players");
+      } else {
+        let messageElement = document.createElement("p");
+        messageElement.innerText = "بازیکن یافت نشد!";
+        messageElement.style.color = "red";
+        playerList.appendChild(messageElement);
+      }
+    };
+  
+    playerList.appendChild(input);
+    playerList.appendChild(button);
+  
+    openModal("players");
+  }
+  
